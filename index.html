@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>gyro test</title>
+    <script src="gyro.js"></script>
+    <link rel="shortcut icon" href="http://yiou.me/common/favicon/favicon.png" type="image/png">
+</head>
+alpha
+<p id="alpha"></p>
+gamma
+<p id="gamma"></p>
+beta
+<p id="beta"></p>
+
+<body>
+    <script>
+        gyro.frequency = 10;
+        gyro.startTracking(function (o) {
+            // o.x, o.y, o.z for accelerometer
+            // o.alpha, o.beta, o.gamma for gyro
+            document.querySelector('#alpha').innerHTML = "" + o.alpha;
+            document.querySelector('#gamma').innerHTML = "" + o.gamma;
+            document.querySelector('#beta').innerHTML = "" + o.beta;
+
+        });
+    </script>
+</body>
+
+</html>
