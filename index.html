@@ -4,8 +4,15 @@
 <head>
     <title>gyro test</title>
     <script src="gyro.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="http://yiou.me/common/favicon/favicon.png" type="image/png">
 </head>
+x
+<p id="x"></p>
+y
+<p id="y"></p>
+z
+<p id="z"></p>
 alpha
 <p id="alpha"></p>
 gamma
@@ -18,6 +25,9 @@ beta
         gyro.frequency = 10;
         gyro.startTracking(function (o) {
             // o.x, o.y, o.z for accelerometer
+            document.querySelector('#x').innerHTML = "" + o.x;
+            document.querySelector('#y').innerHTML = "" + o.y;
+            document.querySelector('#z').innerHTML = "" + o.z;
             // o.alpha, o.beta, o.gamma for gyro
             document.querySelector('#alpha').innerHTML = "" + o.alpha;
             document.querySelector('#gamma').innerHTML = "" + o.gamma;
